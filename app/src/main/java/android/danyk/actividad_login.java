@@ -54,5 +54,5 @@ public class actividad_login extends AppCompatActivity {
                 })
                 .show();
     }
-    // puto kien lo lea
+
 }
