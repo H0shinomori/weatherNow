@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_color"
     android:orientation="vertical"
-    tools:context=".actividad_login">
-
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:padding="8dp"
-        android:src="@drawable/logo_definitivo">
-
-    </ImageView>
-
-
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="¡Bienvenido a tu gestor de incidencias!"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        android:textStyle="bold"></TextView>
+    tools:context=".ActividadRegistroActivity">
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"></View>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -47,19 +30,52 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Iniciar sesión"
+                android:text="Registro"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
+            <EditText
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borde_pantalla_registro"
+                android:drawablePadding="8dp"
+                android:hint="Nombre"
+                android:padding="8dp"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="@color/grey" />
+
+            <EditText
+                android:id="@+id/apellido"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borde_pantalla_registro"
+                android:drawablePadding="8dp"
+                android:hint="Apellido"
+                android:padding="8dp"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="@color/grey" />
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borde_pantalla_registro"
+                android:drawablePadding="8dp"
+                android:hint="Correo electronico"
+                android:padding="8dp"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="@color/grey" />
 
             <EditText
                 android:id="@+id/usuario"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/ventana_inicio_login"
-                android:drawableLeft="@drawable/icono_persona"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borde_pantalla_registro"
                 android:drawablePadding="8dp"
                 android:hint="Usuario"
                 android:padding="8dp"
@@ -71,11 +87,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/ventana_inicio_login"
-                android:drawableLeft="@drawable/icono_contra"
+                android:background="@drawable/borde_pantalla_registro"
                 android:drawablePadding="8dp"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColorHighlight="@color/cardview_dark_background"
+                android:textColorHint="@color/grey" />
+
+            <EditText
+                android:id="@+id/ciudad"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borde_pantalla_registro"
+                android:drawablePadding="8dp"
+                android:hint="Ciudad"
                 android:padding="8dp"
                 android:textColorHighlight="@color/cardview_dark_background"
                 android:textColorHint="@color/grey" />
@@ -84,29 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"></View>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/boton_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:alpha="0.8"
-                android:background="@drawable/button_login"
-                android:text="Iniciar sesión"
-                app:backgroundTint="@color/secundario"
-                tools:ignore="InvalidId">
 
-            </com.google.android.material.button.MaterialButton>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="6dp"
-                android:text="¿No tienes usuario? Pulsa aqui para registrarse"
-                android:textColor="@color/grey"
-                android:textSize="14dp">
-
-            </TextView>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/boton_registro"

@@ -17,7 +17,7 @@ import android.widget.ScrollView;
 public class actividad_login extends AppCompatActivity {
 
     private EditText usuarioVentana, contraVentana;
-    private Button botonLogin;
+    private Button botonLogin, botonRegistro;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class actividad_login extends AppCompatActivity {
          usuarioVentana = findViewById(R.id.usuario);
          contraVentana = findViewById(R.id.contra);
          botonLogin = findViewById(R.id.boton_login);
+         botonRegistro = findViewById(R.id.boton_registro);
 
          botonLogin.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -40,6 +41,13 @@ public class actividad_login extends AppCompatActivity {
                  }else{
                      showErrorDialog(usuario);
                  }
+             }
+         });
+         botonRegistro.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent registro = new Intent(actividad_login.this, ActividadRegistroActivity.class);
+                 startActivity(registro);
              }
          });
     }
