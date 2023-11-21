@@ -9,13 +9,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class ActividadRegistroActivity extends AppCompatActivity {
-EditText nombre, apellido, usuario, contra, email, ciudad;
-BaseDatosAyuda db;
-Button registrarse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_registro);
+
+        EditText nombre, apellido, usuario, contra, email, ciudad;
+        BaseDatosAyuda db;
+        Button registrarse = findViewById(R.id.boton_registro);
+        
         nombre = findViewById(R.id.nombre);
         apellido = findViewById(R.id.apellido);
         usuario = findViewById(R.id.usuario);
@@ -24,7 +26,6 @@ Button registrarse;
         ciudad = findViewById(R.id.ciudad);
 
         db = new BaseDatosAyuda(ActividadRegistroActivity.this, "usuarios",null,1);
-
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
