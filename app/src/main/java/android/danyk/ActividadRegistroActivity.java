@@ -2,6 +2,9 @@ package android.danyk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,13 +38,32 @@ public class ActividadRegistroActivity extends AppCompatActivity {
                 String persona_contraseña = contra.getText().toString();
                 String persona_email = email.getText().toString();
                 String persona_ciudad = ciudad.getText().toString();
-                long recordid = db.personaGuardada(persona_nombre,persona_apellido,persona_usuario,persona_contraseña,persona_email,persona_ciudad);
-                if(recordid > 0){
-                    Toast.makeText(getApplicationContext(), "Guardado correctamente", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Guardado correctamente", Toast.LENGTH_LONG).show();
+                try {
+                    long recordid = db.personaGuardada(persona_nombre, persona_apellido, persona_usuario, persona_contraseña, persona_email, persona_ciudad);
+                    if (recordid > 0) {
+                        Toast.makeText(getApplicationContext(), "Guardado correctamente", Toast.LENGTH_LONG).show();
+                        nombre.setText("");
+                        apellido.setText("");
+                        usuario.setText("");
+                        contra.setText("");
+                        email.setText("");
+                        ciudad.setText("");
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error al guardar", Toast.LENGTH_LONG).show();
+                    }
+                } catch (SQLiteException e) {
+                    Toast.makeText(getApplicationContext(), "Error en la base de datos: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });
+         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+         Button volver_inicio = findViewById(R.id.boton_volver_inicio);
+         volver_inicio.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(ActividadRegistroActivity.this, actividad_login.class);
+                 startActivity(intent);
+             }
+         });
     }
 }

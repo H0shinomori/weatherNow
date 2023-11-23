@@ -122,6 +122,19 @@
                 android:background="@drawable/button_login"
                 android:text="Registrate"
                 app:backgroundTint="@color/secundario"></com.google.android.material.button.MaterialButton>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"></View>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/boton_volver_inicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+                android:background="@drawable/button_login"
+                android:text="Volver a inicio"
+                app:backgroundTint="@color/secundario"></com.google.android.material.button.MaterialButton>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
