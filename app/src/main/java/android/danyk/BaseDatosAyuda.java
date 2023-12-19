@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -63,5 +62,25 @@ public class BaseDatosAyuda extends SQLiteOpenHelper {
                 null,
                 null
         );
+    }
+    public String cogerTodosDatos(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from personas", null);
+        String salida = "";
+        while(cursor.moveToNext()){
+            String nombre = cursor.getString(0);
+            String apellido = cursor.getString(1);
+            String usuario = cursor.getString(2);
+            String contraseña = cursor.getString(3);
+            String email = cursor.getString(4);
+            String ciudad = cursor.getString(5);
+            salida = salida + nombre + " - " +
+                    apellido + " - " +
+                    usuario + " - " +
+                    contraseña + "\n " +
+                    email + " - " +
+                    ciudad + "\n";
+        }
+        return salida;
     }
 }

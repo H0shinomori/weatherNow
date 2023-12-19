@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_color"
+    android:background="#0C000000"
     android:orientation="vertical"
     tools:context=".ActividadRegistroActivity">
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"></View>
+
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="30dp">
+        app:cardElevation="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,6 +34,7 @@
                 android:textColor="@color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
@@ -58,6 +58,7 @@
                 android:padding="8dp"
                 android:textColorHighlight="@color/cardview_dark_background"
                 android:textColorHint="@color/grey" />
+
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
@@ -112,19 +113,20 @@
                 android:layout_height="20dp"></View>
 
 
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/boton_registro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 android:alpha="0.8"
                 android:background="@drawable/button_login"
                 android:text="Registrate"
-                app:backgroundTint="@color/secundario"></com.google.android.material.button.MaterialButton>
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"></View>
+                android:textColor="@color/black"
+                app:backgroundTint="#BEFFEB3B">
+
+            </com.google.android.material.button.MaterialButton>
+
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/boton_volver_inicio"
@@ -134,8 +136,11 @@
                 android:alpha="0.8"
                 android:background="@drawable/button_login"
                 android:text="Volver a inicio"
-                app:backgroundTint="@color/secundario"></com.google.android.material.button.MaterialButton>
+                android:textColor="@color/black"
+                app:backgroundTint="#BEFFEB3B">
+
+            </com.google.android.material.button.MaterialButton>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-</LinearLayout>
+</RelativeLayout>
